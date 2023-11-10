@@ -86,9 +86,9 @@ export default function CreatePost() {
         <div className="details">
             <div className="card-header">
                 <div className="card-pic">
-                    <img src="https://funkylife.in/wp-content/uploads/2022/09/boys-dp-from-funkylife-7-1024x1024.jpg" alt=""/>
+                    <img src={JSON.parse(localStorage.getItem("user")).Photo?JSON.parse(localStorage.getItem("user")).Photo:"https://cdn-icons-png.flaticon.com/512/3135/3135715.png"} alt=""/>
                 </div>
-                <h5>Ramesh</h5>
+                <h5>{JSON.parse(localStorage.getItem("user")).userName}</h5>
             </div>
             <textarea type="text" placeholder="Write a caption" value={body} onChange={(e)=>{setBody(e.target.value)}}/>
         </div>

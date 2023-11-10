@@ -8,7 +8,7 @@ const USER = mongoose.model("USER");
 //to get user profile 
 router.get("/user/:id",(req,res)=>{
     USER.findOne({_id:req.params.id})
-    .select("-password") //select me jo cheez ni chahiye hoti vo likhte h
+    // .select("-password") //select me jo cheez ni chahiye hoti vo likhte h
     .then(user=>{
         POST.find({postedBy:req.params.id})
         .populate("postedBy","_id")

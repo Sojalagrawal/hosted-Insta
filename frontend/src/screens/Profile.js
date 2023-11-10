@@ -21,6 +21,7 @@ export default function Profile() {
         console.log(result)
         setPic(result.post)
         setUser(result.user)
+        
       })
   },[])
 

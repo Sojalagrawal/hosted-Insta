@@ -34,7 +34,7 @@ export default function SignIn() {
     }).then(res=>res.json())
     .then(data=>{
          if(data.error){
-              notifyA(data.error[0].msg);
+              notifyA(data.error);
          }else{
               notifyB(data.message);
               localStorage.setItem("jwt",data.authtoken);

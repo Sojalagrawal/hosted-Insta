@@ -51,7 +51,7 @@ router.post("/signin",[
     ], (req, res) => {
         const errors=validationResult(req);
         if(!errors.isEmpty()){
-            return res.status(400).json({error:errors.array()});
+            return res.status(400).json({error:errors.array()[0].msg});
         }
     const { email, password } = req.body;
 
@@ -64,10 +64,10 @@ router.post("/signin",[
         }
         bcrypt.compare(password, savedUser.password).then((match) => {
             if (match) {
-                const {_id,name,email,userName}=savedUser
+                const {_id,name,email,userName,Photo}=savedUser
                 const token=jwt.sign({_id:savedUser.id},Jwt_secret);
-                console.log({token,user:{_id,name,email,userName}});
-                return res.status(200).json({ authtoken:token,message: "Signed in Successfully",user:{_id,name,email,userName}});
+                // console.log({token,user:{_id,name,email,userName,Photo}});
+                return res.status(200).json({ authtoken:token,message: "Signed in Successfully",user:{_id,name,email,userName,Photo}});
             } else {
                 return res.status(422).json({error:"Invalid password" })
             }
