@@ -78,7 +78,7 @@ export default function UserProfile() {
           <div className="profile-data">
               <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
                 <h1>{user.name}</h1>
-                <button className='followBtn' onClick={
+                {userid!=JSON.parse(localStorage.getItem("user"))._id  && <button className='followBtn' onClick={
                   ()=>{
                     if(isFollow){
                       unfollowUser(user._id)
@@ -89,7 +89,7 @@ export default function UserProfile() {
                     }
                   }>
                     {isFollow? "Unfollow":"Follow"}
-                </button>
+                </button>}
               </div>
               <div className="profile-info" style={{display:"flex"}}>
                 <p>{posts.length} posts</p>

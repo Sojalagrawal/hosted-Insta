@@ -8,6 +8,7 @@
 
 .main-div{
     border-top:1px solid rgb(173,173,173) ;
+    border-bottom:1px solid rgb(173,173,173) ;
 }
 
 .post-header{
@@ -22,10 +23,10 @@
     cursor:pointer;
 }
 
-.details{
+/* .details{
     border-top:1px solid rgb(173,173,173) ;
 
-}
+} */
 textarea{
     width:90%;
     border:none;

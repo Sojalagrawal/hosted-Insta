@@ -79,6 +79,14 @@ router.put("/uploadProfilePic",requireLogin,(req,res)=>{
     }).catch((err)=>{return res.status(422).json({error:err})})
 })
 
+router.get("/searchUser/:username",requireLogin,(req,res)=>{
+    const name=req.params.username;
+    USER.find({userName: { $regex: '.*' + name + '.*' } }).then((result)=>{
+        return res.status(200).json(result);
+    })
+    .catch((err)=>{return res.status(422).json({error:err})})
+})
+
 
 
 

@@ -15,6 +15,7 @@ import { LoginContext } from './components/context/LoginContext';
 import Modal from './components/Modal';
 import UserProfile from './components/UserProfile';
 import MyfollowingPost from './screens/MyfollowingPost';
+import Search from './screens/Search';
 
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
@@ -35,7 +36,7 @@ function App() {
             <Route path="/createPost" element={<CreatePost/>}/>            
             <Route path="/profile/:userid" element={<UserProfile/>}/>            
             <Route path="/followingpost" element={<MyfollowingPost/>}/>            
-
+            <Route path="/search" element={<Search/>}/>
          </Routes>
         <ToastContainer theme="dark"/>
         {modalOpen && <Modal setModalOpen={setModalOpen}/>}

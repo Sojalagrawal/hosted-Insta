@@ -17,6 +17,7 @@ export default function Navbar({login}) {
       return[
         <>
           <li><Link to="/profile">Profile</Link></li>
+          <li><Link to="/search">Search</Link></li>
           <li><Link to="/createPost">Create Post</Link></li>
           <li style={{marginLeft:"20px"}}><Link to="/followingpost">Home</Link></li>
           <li><Link to={""}><button className='primaryBtn' onClick={()=>setModalOpen(true)}>LogOut</button></Link></li>
@@ -40,6 +41,9 @@ export default function Navbar({login}) {
         <>
           <li><Link to="/"><span class="material-symbols-outlined">
             home
+          </span></Link></li>
+          <li><Link to="/search"><span class="material-symbols-outlined">
+            search
           </span></Link></li>
           <li><Link to="/profile"><span class="material-symbols-outlined">
             account_circle
